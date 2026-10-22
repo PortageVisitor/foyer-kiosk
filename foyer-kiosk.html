@@ -406,7 +406,7 @@
   document.addEventListener('touchmove', (e) => e.preventDefault(), { passive: false });
 
   // Detect form submission — only watch for submission after form has been
-  // open for at least 20 seconds (enough time to fill it out)
+  // open for at least 30 seconds (enough time to fill it out)
   const formFrame = document.getElementById('form-frame');
   let formReadyForSubmit = false;
   let formReadyTimer = null;
@@ -416,7 +416,7 @@
     clearTimeout(formReadyTimer);
     formReadyTimer = setTimeout(() => {
       formReadyForSubmit = true;
-    }, 20000); // 20 seconds before we start watching for submission
+    }, 30000); // 30 seconds before we start watching for submission
   }
 
   formFrame.addEventListener('load', function() {
